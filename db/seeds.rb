@@ -10,8 +10,8 @@ require 'faker'
 category = ["chinese", "italian", "japanese", "french", "belgian"].sample
 
 10.times do
-  restaurant = Restaurant.create(name: Faker::Movies::HarryPotter, address: Faker::Movies::HarryPotter, phone_number: Faker::PhoneNumber.cell_phone, category: category)
+  restaurant = Restaurant.create(name: Faker::Movies::HarryPotter.character, address: Faker::Movies::HarryPotter.location, phone_number: Faker::PhoneNumber.cell_phone, category: category)
   rand(3...8).times do
-    Review.create(content: Faker::Movies::HarryPotter, rating: rand(0..5), restaurant: restaurant)
+    Review.create(content: Faker::Movies::HarryPotter.quote, rating: rand(0..5), restaurant: restaurant)
   end
 end
