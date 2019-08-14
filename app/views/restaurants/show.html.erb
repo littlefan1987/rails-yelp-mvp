@@ -22,8 +22,10 @@
   <% if !@reviews.empty? %><h4>Reviews:</h4><% end %>
     <ul class="list-group">
     <% @reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
-  <% end %>
+      <div class="list-group-item">
+        <li><%= review.content %>  <%= review.rating %><i class="fas fa-star"></i></li>
+      </div>
+    <% end %>
     </ul>
 
 <div class="col-xs-12 col-md-12 btn-group">
